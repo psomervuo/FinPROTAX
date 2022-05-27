@@ -32,4 +32,6 @@ In the output file each input sequence is spread into multiple lines, columns of
 4) Taxon Name
 5) Probability
 
+---
+
 This project has received funding from the European Research Council (ERC) under the European Union’s Horizon 2020 research and innovation programme (grant agreement No 856506).
