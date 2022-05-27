@@ -17,9 +17,11 @@ NOTE: In general, full-length model should be used unless user knows what he/she
 Below gives an example where $M specifies path to the selected model, $P is path to directory progs, and $TH is the probability threshold defined by user.
 First input sequences need to get aligned corresponding to the reference sequences. This is done using hmmalign. After that the insertions are removed and the remaining parts of the alignment are used to calculate p-distances against reference sequences and by means of PROTAX, the distances are converted into taxon membership probabilities.
 
+```
 1) ${P}/hmmalign --outformat A2M -o tmp.a2m ${M}/refs.hmm input.fa
 2) perl ${P}/removeinserts.pl tmp.a2m > tmp_aligned.fa
 3) ${P}/classify_mxcode ${M}/taxonomy.priors ${M}/refs.aln ${M}/model.rseqs.numeric ${M}/model.pars ${M}/model.scs $TH tmp_aligned.fa > output
+```
 
 Temporary files 'tmp.a2m' and 'tmp_aligned.fa' can be removed after classification.
 In the output file each input sequence is spread into multiple lines, columns of each line being:
